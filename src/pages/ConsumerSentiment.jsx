@@ -22,7 +22,7 @@ const ConsumerSentiment = () => {
       <VStack spacing={4}>
         <Heading as="h1" size="2xl">Consumer Sentiment Analysis</Heading>
         <Text fontSize="lg">Basic data representation for consumer sentiment analysis will be displayed here.</Text>
-      <Button onClick={handleFetchAndAnalyzeTweets} colorScheme="teal" size="lg">Fetch and Analyze Tweets</Button>
+        <Button onClick={handleFetchAndAnalyzeTweets} colorScheme="teal" size="lg">Fetch and Analyze Tweets</Button>
         {sentimentResults.map((tweet, index) => (
           <Box key={index} p={4} shadow="md" borderWidth="1px">
             <Text>{tweet.text}</Text>
