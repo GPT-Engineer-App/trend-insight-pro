@@ -11,6 +11,9 @@ const Navbar = () => {
         <Flex alignItems="center">
           <Link as={RouterLink} to="/about" color="white" mx={2}>About</Link>
           <Link as={RouterLink} to="/contact" color="white" mx={2}>Contact</Link>
+          <Link as={RouterLink} to="/trend-analysis" color="white" mx={2}>Trend Analysis</Link>
+          <Link as={RouterLink} to="/competitor-analysis" color="white" mx={2}>Competitor Analysis</Link>
+          <Link as={RouterLink} to="/consumer-sentiment" color="white" mx={2}>Consumer Sentiment</Link>
           <Button as={RouterLink} to="/dashboard" colorScheme="teal" variant="outline" mx={2}>Dashboard</Button>
         </Flex>
       </Flex>
