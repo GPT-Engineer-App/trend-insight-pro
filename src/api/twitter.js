@@ -1,5 +1,6 @@
-const CLIENT_ID = 'MV81SXc0WDVpZE52WDZoVnFvVlc6MTpjaQ';
+const CLIENT_ID = '1803801138292015104CodePhish';
 const CLIENT_SECRET = import.meta.env.VITE_CLIENT_SECRET;
+const APP_ID = '28943147';
 
 export const fetchTweets = async (query) => {
   try {
