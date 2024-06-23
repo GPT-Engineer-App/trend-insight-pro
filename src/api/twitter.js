@@ -1,11 +1,31 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 const CLIENT_ID = 'MV81SXc0WDVpZE52WDZoVnFvVlc6MTpjaQ';
-const CLIENT_SECRET = 'YOUR_CLIENT_SECRET'; // Replace with the actual client secret
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
 
 export const fetchTweets = async (query) => {
   try {
-    const response = await fetch(`https://api.twitter.com/2/tweets/search/recent?query=${query}&max_results=10`, {
+    const tokenResponse = await fetch('https://api.twitter.com/oauth2/token', {
+      method: 'POST',
       headers: {
         'Authorization': `Basic ${btoa(`${CLIENT_ID}:${CLIENT_SECRET}`)}`,
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      body: 'grant_type=client_credentials'
+    });
+
+    if (!tokenResponse.ok) {
+      console.error('Error response:', tokenResponse);
+      throw new Error('Error fetching bearer token');
+    }
+
+    const tokenData = await tokenResponse.json();
+    const bearerToken = tokenData.access_token;
+
+    const response = await fetch(`https://api.twitter.com/2/tweets/search/recent?query=${query}&max_results=10`, {
+      headers: {
+        'Authorization': `Bearer ${bearerToken}`,
         'Content-Type': 'application/json'
       }
     });
