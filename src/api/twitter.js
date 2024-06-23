@@ -1,8 +1,5 @@
-import dotenv from 'dotenv';
-dotenv.config();
-
 const CLIENT_ID = 'MV81SXc0WDVpZE52WDZoVnFvVlc6MTpjaQ';
-const CLIENT_SECRET = process.env.CLIENT_SECRET;
+const CLIENT_SECRET = import.meta.env.VITE_CLIENT_SECRET;
 
 export const fetchTweets = async (query) => {
   try {
