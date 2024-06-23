@@ -1,5 +1,4 @@
-const BEARER_TOKEN = 'R7nSG0rb9hlHuPEM753c1RWBL';
-const API_SECRET_KEY = 'SOQv42SDmddZscdjxnvU9IQLACzo7S9T0jKLUrjv8n0qqCEZ8d';
+const BEARER_TOKEN = 'AAAAAAAAAAAAAAAAAAAAACujuQEAAAAA1SVIDocjUS5yaFJ5dLjNpaLTGfE%3DwWaqVow1ErIYYSIwQgImplx2XXgV7yCyprav7jIJhlPvenng1v';
 
 export const fetchTweets = async (query) => {
   try {
