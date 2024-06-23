@@ -1,6 +1,5 @@
 const BEARER_TOKEN = 'AAAAAAAAAAAAAAAAAAAAACujuQEAAAAAJdMTWhzhq710tlJl%2F1AOCf8VYg0%3DMzG0IL6xuSftHUHraRhRRg9yf08YJPcWAQM30HPYWE5vQxjXAI';
 
-
 export const fetchTweets = async (query) => {
   try {
     const response = await fetch(`https://api.twitter.com/2/tweets/search/recent?query=${query}&max_results=10`, {
@@ -29,3 +28,16 @@ export const analyzeSentiment = (tweets) => {
     sentiment: 'neutral', // Replace with actual sentiment analysis
   }));
 };
+
+// Temporary test function to log fetched tweets
+const testFetchTweets = async () => {
+  try {
+    const tweets = await fetchTweets('test');
+    console.log('Fetched tweets:', tweets);
+  } catch (error) {
+    console.error('Test fetch tweets error:', error);
+  }
+};
+
+// Call the test function
+testFetchTweets();
