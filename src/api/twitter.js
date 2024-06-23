@@ -1,4 +1,4 @@
-const BEARER_TOKEN = '1803801138292015104CodePhish';
+const BEARER_TOKEN = 'AAAAAAAAAAAAAAAAAAAAACujuQEAAAAAJdMTWhzhq710tlJl%2F1AOCf8VYg0%3DMzG0IL6xuSftHUHraRhRRg9yf08YJPcWAQM30HPYWE5vQxjXAI';
 
 export const fetchTweets = async (query) => {
   try {
