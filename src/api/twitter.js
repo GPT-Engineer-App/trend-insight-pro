@@ -1,10 +1,12 @@
-const BEARER_TOKEN = 'AAAAAAAAAAAAAAAAAAAAACujuQEAAAAA1SVIDocjUS5yaFJ5dLjNpaLTGfE%3DwWaqVow1ErIYYSIwQgImplx2XXgV7yCyprav7jIJhlPvenng1v';
+const CLIENT_ID = 'MV81SXc0WDVpZE52WDZoVnFvVlc6MTpjaQ';
+const CLIENT_SECRET = 'YOUR_CLIENT_SECRET'; // Replace with the actual client secret
 
 export const fetchTweets = async (query) => {
   try {
     const response = await fetch(`https://api.twitter.com/2/tweets/search/recent?query=${query}&max_results=10`, {
       headers: {
-        'Authorization': `Bearer ${BEARER_TOKEN}`
+        'Authorization': `Basic ${btoa(`${CLIENT_ID}:${CLIENT_SECRET}`)}`,
+        'Content-Type': 'application/json'
       }
     });
 
